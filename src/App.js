@@ -23,4 +23,11 @@ function App() {
   );
 }
 
+/* 
+    Photo by NeONBRAND on Unsplash 
+    Photo by Sidekix Media on Unsplash
+    Photo by Naomi Hébert on Unsplash
+    Photo by Vinicius Amano on Unsplash
+*/
+
 export default App;
