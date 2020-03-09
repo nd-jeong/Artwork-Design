@@ -2,6 +2,9 @@ import React from 'react';
 import ImagePreview from './components/imagePreview';
 import ArtworkSelector from './components/artworkSelector';
 import BGSelector from './components/bgSelector';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/row';
+import Col from 'react-bootstrap/col';
 import './App.css';
 
 class App extends React.Component {
@@ -33,19 +36,25 @@ class App extends React.Component {
 
     render() {
         return(
-            <div>
-                <header>
+            <container className='app'>
+                <Row>
                     <p>Test</p>
-                </header>
-                <ImagePreview props={this.state}/>
-                <ArtworkSelector 
-                    props={this.state}
-                    artSelect={this.artworkChange}/>
-                <BGSelector 
-                    props={this.state}
-                    bgSelect={this.backgroundChange}
-                />
-            </div>
+                </Row>
+                <Row className='image-window'>
+                    <Col className='preview'>
+                        <ImagePreview props={this.state}/>
+                    </Col>
+                    <Col className='menu'>
+                            <ArtworkSelector 
+                                props={this.state}
+                                artSelect={this.artworkChange}/>
+                            <BGSelector 
+                                props={this.state}
+                                bgSelect={this.backgroundChange}
+                            />
+                    </Col>
+                </Row>
+            </container>
         )
     }
 }

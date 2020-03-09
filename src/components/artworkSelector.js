@@ -21,9 +21,11 @@ class ArtworkSelector extends React.Component {
         });
 
         return(
-            <div className='art-selector'>
+            <div>
                 <p>Art Selector</p>
-                {artworkSelection}
+                <div className='art-selector'>
+                    {artworkSelection}
+                </div>
             </div>
         )
     }

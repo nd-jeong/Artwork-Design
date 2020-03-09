@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import bgImages from './bgImages';
 
 class BGSelector extends React.Component {
     constructor(props) {
@@ -14,16 +15,21 @@ class BGSelector extends React.Component {
 
     render() {
         const bgArray = this.props.props.backgrounds;
+        const bgImageArray = bgImages.map(image => {
+            return <img src={image}></img>
+        })
         const bgSelection = bgArray.map(bgID => {
             return(
-                <div className='bg-image' id={bgID} onClick={this.handleClick}></div>
+            <div className='bg-image' id={bgID} onClick={this.handleClick}>{bgImageArray}</div>
             )
         });
 
         return(
-            <div className='bg-selector'>
+            <div>
                 <p>Background Selector</p>
-                {bgSelection}
+                <div className='bg-selector'>
+                    {bgSelection}
+                </div>
             </div>
         )
     }
