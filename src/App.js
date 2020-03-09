@@ -12,7 +12,7 @@ class App extends React.Component {
         super();
 
         this.state = {
-            backgrounds: [1, 2, 3, 4, 5],
+            backgrounds: [1, 2, 3, 4],
             currentBG: '',
             artworks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
             currentArt: ''
@@ -36,7 +36,7 @@ class App extends React.Component {
 
     render() {
         return(
-            <container className='app'>
+            <Container className='app'>
                 <Row>
                     <p>Test</p>
                 </Row>
@@ -54,7 +54,7 @@ class App extends React.Component {
                             />
                     </Col>
                 </Row>
-            </container>
+            </Container>
         )
     }
 }

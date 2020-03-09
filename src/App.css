@@ -25,6 +25,10 @@
 }
 
 .bg-image {
+    max-width: 98%;
+}
+
+.bg-image-container {
     background-color: green;
     height: 50px;
     width: 50px;

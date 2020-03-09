@@ -15,14 +15,25 @@ class BGSelector extends React.Component {
 
     render() {
         const bgArray = this.props.props.backgrounds;
-        const bgImageArray = bgImages.map(image => {
-            return <img src={image}></img>
-        })
-        const bgSelection = bgArray.map(bgID => {
+        // const bgImageArray = bgImages.map(image => {
+        //     return <img src={image} className='bg-image'></img>
+        // })
+        const bgObject = {};
+        bgArray.forEach((bg, i) => bgObject[bg] = bgImages[i]);
+        // const bgSelection = bgArray.map(bgID => {
+        //     return(
+        //         <div className='bg-image-container' id={bgID} onClick={this.handleClick}>
+        //             {/* {bgImageArray} */}
+        //         </div>
+        //     )
+        // });
+        const bgSelection = Object.keys(bgObject).map(function(bgID, index) {
             return(
-            <div className='bg-image' id={bgID} onClick={this.handleClick}>{bgImageArray}</div>
-            )
-        });
+                <div className='bg-image-container' id={bgID, index}>
+                    <img src={(Object.values(bgObject)[index])}></img>
+                </div>
+            );
+        })
 
         return(
             <div>
