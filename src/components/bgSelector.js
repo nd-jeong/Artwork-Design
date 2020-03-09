@@ -20,20 +20,21 @@ class BGSelector extends React.Component {
         // })
         const bgObject = {};
         bgArray.forEach((bg, i) => bgObject[bg] = bgImages[i]);
-        // const bgSelection = bgArray.map(bgID => {
-        //     return(
-        //         <div className='bg-image-container' id={bgID} onClick={this.handleClick}>
-        //             {/* {bgImageArray} */}
-        //         </div>
-        //     )
-        // });
-        const bgSelection = Object.keys(bgObject).map(function(bgID, index) {
+        const bgSelection = bgArray.map(bgID => {
             return(
-                <div className='bg-image-container' id={bgID, index}>
-                    <img src={(Object.values(bgObject)[index])}></img>
+                <div className='bg-image-container'>
+                    <img src={Object.values(bgObject)[bgID]} className='bg-image' id={bgID} onClick={this.handleClick}></img>
                 </div>
-            );
-        })
+            )
+        });
+
+        // const bgSelection = Object.keys(bgObject).map(function(bgID, index) {
+        //     return(
+        //         <div className='bg-image-container' id={bgID} onClick={() => this.handleClick()}>
+        //             <img src={(Object.values(bgObject)[index])} className='bg-image'></img>
+        //         </div>
+        //     );
+        // })
 
         return(
             <div>

@@ -12,7 +12,7 @@ class App extends React.Component {
         super();
 
         this.state = {
-            backgrounds: [1, 2, 3, 4],
+            backgrounds: [0, 1, 2, 3, 4],
             currentBG: '',
             artworks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
             currentArt: ''
@@ -64,6 +64,8 @@ class App extends React.Component {
     Photo by Sidekix Media on Unsplash
     Photo by Naomi Hébert on Unsplash
     Photo by Vinicius Amano on Unsplash
+    Photo by Jason Boyd from Pexels
+    
 */
 
 export default App;
