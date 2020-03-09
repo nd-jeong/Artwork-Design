@@ -16,7 +16,7 @@ class BGSelector extends React.Component {
         const bgArray = this.props.props.backgrounds;
         const bgSelection = bgArray.map(bgID => {
             return(
-                <div className='bg-image' id={bgID}></div>
+                <div className='bg-image' id={bgID} onClick={this.handleClick}></div>
             )
         });
 

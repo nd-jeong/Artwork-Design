@@ -16,6 +16,7 @@ class App extends React.Component {
         }
         
         this.artworkChange = this.artworkChange.bind(this);
+        this.backgroundChange = this.backgroundChange.bind(this);
     }
 
     artworkChange(artID) {
