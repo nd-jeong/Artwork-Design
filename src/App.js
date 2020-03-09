@@ -1,21 +1,40 @@
 import React from 'react';
-import imagePreview from './components/imagePreview';
-import artworkSelector from './components/artworkSelector';
+import ImagePreview from './components/imagePreview';
+import ArtworkSelector from './components/artworkSelector';
+import BGSelector from './components/bgSelector';
 import './App.css';
 
 class App extends React.Component {
     constructor() {
-        this.state = {
+        super();
 
+        this.state = {
+            backgrounds: [1, 2, 3, 4, 5],
+            currentBG: '',
+            artworks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            currentArt: ''
         }
+        
+        this.artworkChange = this.artworkChange.bind(this);
+    }
+
+    artworkChange(artID) {
+        this.setState({
+            currentArt: artID
+        });
     }
 
     render() {
         return(
-            <div className = "App">
-                <header className = "App-header">
+            <div>
+                <header>
                     <p>Test</p>
                 </header>
+                <ImagePreview props={this.state}/>
+                <ArtworkSelector 
+                    props={this.state}
+                    artSelect={this.artworkChange}/>
+                <BGSelector props={this.state}/>
             </div>
         )
     }

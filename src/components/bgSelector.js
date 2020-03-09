@@ -1,18 +1,18 @@
 import React from 'react';
 import '../App.css';
 
-class ImagePreview extends React.Component {
+class BGSelector extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
         return(
-            <div className='img-preview'>
-                <p>Image Preview</p>
+            <div className='bg-selector'>
+                <p>Background Selector</p>
             </div>
         )
     }
 }
 
-export default ImagePreview
+export default BGSelector;
