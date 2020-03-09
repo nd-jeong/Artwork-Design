@@ -14,16 +14,16 @@ class ArtworkSelector extends React.Component {
 
     render() {
         const artworkArray = this.props.props.artworks;
-        console.log(artworkArray)
-        const artworkDisplay = artworkArray.map(artID => {
+        const artworkSelection = artworkArray.map(artID => {
             return(
             <div className='art-image' id={artID} onClick={this.handleClick}></div>
             )
-        })
+        });
+
         return(
             <div className='art-selector'>
                 <p>Art Selector</p>
-                {artworkDisplay}
+                {artworkSelection}
             </div>
         )
     }

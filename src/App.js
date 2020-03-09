@@ -24,6 +24,12 @@ class App extends React.Component {
         });
     }
 
+    backgroundChange(bgID) {
+        this.setState({
+            currentBG: bgID
+        });
+    }
+
     render() {
         return(
             <div>
@@ -34,7 +40,10 @@ class App extends React.Component {
                 <ArtworkSelector 
                     props={this.state}
                     artSelect={this.artworkChange}/>
-                <BGSelector props={this.state}/>
+                <BGSelector 
+                    props={this.state}
+                    bgSelect={this.backgroundChange}
+                />
             </div>
         )
     }
