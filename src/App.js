@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/row';
 import Col from 'react-bootstrap/col';
 import './App.css';
+import bgImages from './components/bgImages';
 
 class App extends React.Component {
     constructor() {
@@ -15,11 +16,13 @@ class App extends React.Component {
             backgrounds: [0, 1, 2, 3, 4],
             currentBG: '',
             artworks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            currentArt: ''
+            currentArt: '',
+            bgFilePath: ''
         }
         
         this.artworkChange = this.artworkChange.bind(this);
         this.backgroundChange = this.backgroundChange.bind(this);
+        this.backgroundSelect = this.backgroundSelect.bind(this);
     }
 
     artworkChange(artID) {
@@ -34,7 +37,24 @@ class App extends React.Component {
         });
     }
 
+    backgroundSelect() {
+        const bgArray = this.state.backgrounds;
+        const bgObject = {};
+        bgArray.forEach((bg, i) => bgObject[bg] = bgImages[i]);
+
+        Object.keys(bgObject).map(bgID => {
+            if (this.state.currentBG === bgID) {
+                this.state.bgFilePath = Object.values(bgObject)[bgID]
+            }
+        })
+    }
+
+    componentDidMount() {
+        
+    }
+
     render() {
+        this.backgroundSelect();
         return(
             <Container className='app'>
                 <Row>

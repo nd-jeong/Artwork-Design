@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import bgImages from './bgImages';
 
 class ImagePreview extends React.Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class ImagePreview extends React.Component {
         return(
             <div className='img-preview'>
                 <p>Image Preview</p>
+                <img src={this.props.props.bgFilePath}></img>
             </div>
         )
     }
